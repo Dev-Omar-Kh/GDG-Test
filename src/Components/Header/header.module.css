@@ -1,0 +1,194 @@
+.container{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-block: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: var(--white-color);
+    z-index: 100;
+
+}
+
+.logo img{
+
+    height: 45px;
+
+}
+
+.nav_ph {
+
+    position: relative;
+    width: 30px;
+    height: 18px;
+    display: none;
+    transition: 0.3s;
+
+}
+
+.nav_ph .nav_span {
+
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    display: inline-block;
+    border-radius: 25px;
+    border: 2px solid var(--black-color);
+    background-color: var(--black-color);
+
+}
+
+.nav_ph .nav_span:nth-child(1) {
+
+    top: 0px;
+    left: 0;
+    transition: 0.3s;
+
+}
+
+.nav_ph .nav_span:nth-child(2) {
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.nav_ph .nav_span:nth-child(3) {
+
+    bottom: 0px;
+    left: 0;
+    transition: 0.3s;
+
+}
+
+.change {
+
+    rotate: 180deg;
+
+}
+
+.change .nav_span:nth-child(1) {
+
+    top: 50%;
+    left: 0px;
+    rotate: -45deg;
+
+}
+
+.change .nav_span:nth-child(2) {
+
+    opacity: 0;
+    left: -100%;
+
+}
+
+.change .nav_span:nth-child(3) {
+
+    top: 50%;
+    left: 0;
+    rotate: 45deg;
+
+}
+
+.nav , .nav ul{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white-color);
+    /* background-color: blue; */
+
+}
+
+.nav ul{
+
+    list-style: none;
+
+}
+
+.nav ul li a{
+
+    padding: 10px 20px;
+    color: var(--gray-color);
+    transition: 0.3s;
+
+    &:hover{
+
+        color: var(--black-color);
+
+    }
+
+}
+
+.action{
+
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--violet-color);
+    color: var(--white-color);
+    transition: 0.3s;
+
+    &:hover{
+
+        transform: translateY(-5px);
+
+    }
+
+}
+
+/* ====== responsive-style ====== */
+
+@media(max-width: 940px){
+
+    .nav_ph {
+    
+        display: block;
+
+    }
+
+    .nav{
+
+        position: fixed;
+        top: 80px;
+        left: 0;
+        height: calc(100svh - 108px);
+        padding: 30px 4.5%;
+        justify-content: space-between;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 100;
+
+    }
+
+    .nav , .nav ul{
+
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
+    .display_nav{
+
+        top: 108px;
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+    .action , .nav ul li , .nav ul li a{
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+}
